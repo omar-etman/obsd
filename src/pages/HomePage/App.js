@@ -10,7 +10,7 @@ import { Suspense } from 'react';
 function App() {
   return (
     <div className="App">
-      <Suspense>
+      <Suspense fallback={<h2>loading route ...</h2>}>
         <Router>
           <header className="App-header">
             <Nav/>
