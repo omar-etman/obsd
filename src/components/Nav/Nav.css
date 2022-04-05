@@ -1,0 +1,59 @@
+.nav-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    padding: 1rem;
+    border: 2px solid green;
+}
+
+.nav-buttons, .nav-brand {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid yellow;
+}
+
+.brand-name{
+    font-weight: bolder;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.nav-buttons li {
+    list-style: none;
+    margin: 0 1rem;
+}
+
+.bikebtn-icon {
+    max-width: 36.8px;
+}
+
+.buttons-btn {
+    display: none;
+}
+
+.nav-dropDown-3{
+    display: none;
+}
+
+
+@media (min-width: 370px){
+    .buttons-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-dropDown-3{
+        display: flex;
+        position: absolute;
+        background-color: white;
+        border: 2px solid blue;
+        color: var(--black);
+        margin-top: 7rem;
+        padding: 1rem;
+    }
+}
