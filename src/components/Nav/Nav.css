@@ -1,9 +1,12 @@
 .nav-container{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     padding: 0 1rem;
+    /* width: 100vw; */
+    margin-bottom: 0rem;
+    justify-self: center;
 }
 
 .nav-buttons, .nav-brand {
@@ -17,6 +20,12 @@
     font-weight: bolder;
     font-size: 2.5rem;
     color: white;
+}
+
+.brand-logo{
+    transform-box: view-box;
+    margin-top: 0.275rem;
+    font-size: 2.2rem;
 }
 
 .nav-buttons li {
@@ -64,5 +73,9 @@
         margin-top: 19rem;
         padding: 1rem;
         z-index: 2;
+    }
+
+    .nav-buttons, .nav-brand {
+        margin: 0 4rem;
     }
 }

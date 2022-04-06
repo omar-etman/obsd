@@ -5,8 +5,8 @@
   --red: #cd2f17;
   --black: #303030;
   --blue: #21759b;
-  --dkGrey: #707070;
-  --ltGrey: #6e6e6e;
+  --Grey: #707070;
+  --ltGrey: lightgray;
   --green: #2fcd17;
 }
 
@@ -23,6 +23,10 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.icon {
+  color: var(--orange);
 }
 
 

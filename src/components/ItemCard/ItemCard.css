@@ -68,9 +68,9 @@
     font-size: 2rem;
     align-self: center;
 }
-.incrementor-btn:hover {
-    font-weight: bolder
 
+.incrementor-btn:hover {
+    font-weight: bolder;
 }
 
 .minus {

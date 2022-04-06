@@ -3,6 +3,7 @@ import Home from './HomePage/Home';
 import Form from './Form/Form';
 import Cart from '../components/Cart/Cart';
 import DashBoard from './DashBoard/DashBoard';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
 import { useState } from 'react'
 import { BrowserRouter , Route, Routes} from 'react-router-dom';
 import './App.css';
@@ -38,7 +39,13 @@ function App() {
             <Route path = "/dashboard" element={<DashBoard/>}/>
           </Routes>
           <footer className='App-footer'>
-            footer
+            <div className='footer-brand'>
+              <h4 className='footer-brand-name'>
+                OBSD
+              </h4>
+              <RestaurantIcon className='footer-logo icon'/>
+            </div>
+            <p><span>&copy</span>2022 OBSD - All Rights Reserved.</p>
           </footer>
       </BrowserRouter>
     </div>

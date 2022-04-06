@@ -6,8 +6,10 @@
 }
 
 .App-header{
-  position: sticky top;
+  position: fixed;
   z-index: 1;
+  background: var(--black);
+  width: 100%;
 }
 
 .App-Cart{
@@ -23,8 +25,36 @@
   padding-right: 1.7rem;
 }
 
+.App-footer {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.footer-brand-name {
+  font-weight: bolder;
+  font-style: 0.5rem;
+  margin: 0.5rem 0;
+  padding: 0;
+}
+
+.footer-brand {
+  display: none;
+}
+
+.footer-logo {
+  margin-top: 0.5rem;
+}
+
+
+
 @media (min-width: 700px){
   .App-Cart{
     display: none;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: 5rem;
   }
 }

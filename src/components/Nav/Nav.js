@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Badge } from '@mui/material'
+import RestaurantIcon from '@mui/icons-material/Restaurant';
 import Cart from '../Cart/Cart'
 import BikeIcon from '../../assets/fastDelivery.png'
 import './Nav.css'
@@ -12,7 +13,9 @@ function Nav({dropDown3, toggleDropDown3}) {
         <Link to = "/">
             <div className='nav-brand'>
                 <span className='brand-name'>OBSD</span>
-                <img src='' alt='' className='brand-logo'/>
+                <span className='brand-logo icon'>
+                    <RestaurantIcon/>
+                </span>
             </div>
         </Link>
         <ul className='nav-buttons'>
