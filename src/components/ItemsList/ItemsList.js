@@ -3,6 +3,8 @@ import ItemCard from '../ItemCard/ItemCard'
 import './ItemsList.css'
 
 function ItemsList() {
+  //function to filter based on category (object for filters as state)
+  //for mobile view, a function to assign based on category to the accordions
   return (
     <div className='itemsList-container'>
         <ul className='itemsList-topBtns'>

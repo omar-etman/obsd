@@ -1,0 +1,27 @@
+.itemsList-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: var(--black);
+}
+
+.itemsList-topBtns{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.topBtns-btn{
+    border: 2px solid var(--orange);
+    color: var(--orange);
+    padding: 1rem;
+}
+
+.topBtns-btn :hover, .topBtns-btn :active{
+    color: white;
+    background-color: var(--orange);
+}
