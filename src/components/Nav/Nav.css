@@ -40,7 +40,7 @@
 }
 
 
-@media (min-width: 370px){
+@media (min-width: 700px){
     .buttons-btn{
         display: flex;
         justify-content: center;
@@ -53,7 +53,8 @@
         background-color: white;
         border: 2px solid blue;
         color: var(--black);
-        margin-top: 7rem;
+        margin-top: 19rem;
         padding: 1rem;
+        z-index: 2;
     }
 }

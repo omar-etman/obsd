@@ -1,6 +1,7 @@
 import Nav from '../components/Nav/Nav';
 import Home from './HomePage/Home';
 import Form from './Form/Form';
+import Cart from '../components/Cart/Cart';
 import DashBoard from './DashBoard/DashBoard';
 import { useState } from 'react'
 
@@ -25,6 +26,13 @@ function App() {
               toggleDropDown3 = {toggleDropDown3}
             />
           </header>
+          {
+            dropDown3 === true ?
+            <div className='App-Cart'>
+              <Cart/>
+            </div>
+            : null
+          }
           <Routes>
             <Route path = "/" element={<Home/>}/>
             <Route path = "/form" element={<Form/>}/>
