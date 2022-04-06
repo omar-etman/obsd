@@ -1,0 +1,26 @@
+.cover-container {
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.cover-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.cover-img{
+    min-width: 12rem;
+}
+
+@media (min-width: 700px) {
+
+    .cover-container {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .cover-img {
+        width: 27rem;
+    }
+}

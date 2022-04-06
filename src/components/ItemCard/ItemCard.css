@@ -6,7 +6,9 @@
 
 .card-container {
     justify-content: flex-start;
-    border: 2px solid red;
+    border: 1px solid gray;
+    border-radius: 0.25rem;
+    padding-left: 0.5rem;
 }
 
 .card-info, .item-details{
@@ -74,5 +76,17 @@
 .item-price {
     font-weight: 600;
     font-size: 0.9rem
+}
+
+@media (min-width: 1140px) {
+    .card-container {
+        transition: all .3s ease-in-out,background 0s,color 0s,border-color 0s;
+        box-shadow: 0 4px 25px 0 whitesmoke;
+    }
+
+    .card-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 25px 0 var(--ltGrey);
+    }
 }
 

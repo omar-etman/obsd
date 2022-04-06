@@ -4,7 +4,7 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    padding: 1rem;
+    padding: 0 1rem;
     border: 2px solid green;
 }
 
@@ -18,13 +18,14 @@
 
 .brand-name{
     font-weight: bolder;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: white;
 }
 
 .nav-buttons li {
     list-style: none;
     margin: 0 1rem;
+    font-size: 1.1rem;
 }
 
 .bikebtn-icon {
