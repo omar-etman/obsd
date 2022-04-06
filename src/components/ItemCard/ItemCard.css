@@ -1,0 +1,62 @@
+.card-container, .card-incrementor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card-container {
+    justify-content: flex-start;
+    border: 2px solid red;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    align-items: flex-start;
+    padding: 0.5rem;
+    width: 12rem;
+}
+
+.card-img{
+    max-width: 12rem;
+}
+
+.item-name{
+    font-weight: 900;
+}
+
+.item-ingredients {
+    font-weight: 300;
+}
+
+.card-incrementor {
+    justify-content: space-between;
+}
+
+.item-ingredients {
+    text-align: left;
+}
+
+
+
+.incrementor-display {
+    margin-right: 1rem;
+    background-color: var(--ltGrey);
+    width: 1.5rem;
+    border-radius: 0.25rem;
+}
+
+
+.incrementor-btn {
+    margin-right: 1rem;
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    align-self: center;
+}
+.incrementor-btn:hover {
+    font-weight: bolder
+
+}
+

@@ -1,4 +1,5 @@
 import React from 'react'
+import itemImg from '../../assets/—Pngtree—seafood pizza with cheese_4942142.png'
 import './ItemCard.css'
 function ItemCard() {
 
@@ -11,16 +12,16 @@ function ItemCard() {
   }
   return (
     <div className='card-container'>
-        <img src='' alt='' className='card-img'/>
+        <img src={itemImg} alt='itemImg' className='card-img'/>
         <div className='card-info'>
-            <span>item's name</span>
-            <p>item's ingredients, item's ingredients, item's ingredients</p>
+            <span className='item-name'>item's name</span>
+            <p className='item-ingredients'>item's ingredients, item's ingredients, item's ingredients</p>
             <span>Price: item's price</span>
-            <ul className='card-incrementor'>
+            <div className='card-incrementor'>
                 <button onClick={add} className='incrementor-btn'>+</button>
                 <p className='incrementor-display'>#</p>
                 <button onClick={subtract} className='incrementor-btn'>-</button>
-            </ul>
+            </div>
         </div> 
     </div>
   )
