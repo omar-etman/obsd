@@ -1,5 +1,6 @@
 import React from 'react'
 import ItemCard from '../ItemCard/ItemCard'
+// import AccordionList from '../AccordionList/AccordionList'
 import './ItemsList.css'
 
 function ItemsList() {
@@ -7,6 +8,9 @@ function ItemsList() {
   //for mobile view, a function to assign based on category to the accordions
   return (
     <div className='itemsList-container'>
+        {/* <div className='itemsList-accordions'>
+            <AccordionList/>
+        </div> */}
         <ul className='itemsList-topBtns'>
             <button className='topBtns-btn'>POPULAR</button>
             <button className='topBtns-btn'>PIZZA</button>
