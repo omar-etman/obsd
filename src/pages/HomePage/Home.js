@@ -10,6 +10,7 @@ function Home() {
         <main>
             <ItemsList/>
         </main>
+        Home
     </div>
   )
 }

@@ -31,6 +31,7 @@ function DashBoard() {
                 :null
             }
         </main>
+        dashboard
     </div>
   )
 }

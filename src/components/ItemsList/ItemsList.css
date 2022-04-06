@@ -5,6 +5,7 @@
     align-items: center;
     padding: 1rem;
     color: var(--black);
+    background-color: white;
 }
 
 .itemsList-topBtns{
@@ -16,12 +17,14 @@
 }
 
 .topBtns-btn{
+    background-color: white;
     border: 2px solid var(--orange);
     color: var(--orange);
     padding: 1rem;
+    margin: 0 1rem;
 }
 
-.topBtns-btn :hover, .topBtns-btn :active{
+.topBtns-btn:hover, .topBtns-btn:active {
     color: white;
     background-color: var(--orange);
 }
