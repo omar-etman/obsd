@@ -5,7 +5,7 @@ import Cart from '../components/Cart/Cart';
 import DashBoard from './DashBoard/DashBoard';
 import { useState } from 'react'
 
-import { BrowserRouter, BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter, BrowserRouter as Route, Routes} from 'react-router-dom';
 import './App.css';
 import { Suspense } from 'react';
 
