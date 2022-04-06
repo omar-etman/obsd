@@ -25,6 +25,9 @@
 .brand-logo{
     transform-box: view-box;
     margin-top: 0.275rem;
+}
+
+.brand-logo svg {
     font-size: 2.2rem;
 }
 

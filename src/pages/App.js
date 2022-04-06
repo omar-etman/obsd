@@ -45,7 +45,7 @@ function App() {
               </h4>
               <RestaurantIcon className='footer-logo icon'/>
             </div>
-            <p><span>&copy</span>2022 OBSD - All Rights Reserved.</p>
+            <p className='brand-copyright'><span>&#169;</span>2022 OBSD - All Rights Reserved.</p>
           </footer>
       </BrowserRouter>
     </div>

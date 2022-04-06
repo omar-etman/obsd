@@ -28,12 +28,13 @@
 .App-footer {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: center;
 }
 
 .footer-brand-name {
   font-weight: bolder;
-  font-style: 0.5rem;
-  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  margin: 0.35rem 0;
   padding: 0;
 }
 
@@ -43,6 +44,14 @@
 
 .footer-logo {
   margin-top: 0.5rem;
+}
+
+.footer-logo svg {
+  font-size: 0.25rem;
+}
+
+.brand-copyright{
+  margin-left: 0.5rem;
 }
 
 
@@ -55,6 +64,7 @@
   .footer-brand {
     display: flex;
     flex-flow: row nowrap;
-    margin-left: 5rem;
+    margin-right: 20rem;
+    margin-top: 0.5rem
   }
 }

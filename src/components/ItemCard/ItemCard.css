@@ -9,6 +9,7 @@
     border: 1px solid gray;
     border-radius: 0.25rem;
     padding-left: 0.5rem;
+    width: 100%;
 }
 
 .card-info, .item-details{
