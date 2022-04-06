@@ -22,7 +22,7 @@ function ItemCard() {
             <div className='card-incrementor'>
                 <button onClick={add} className='incrementor-btn'>+</button>
                 <p className='incrementor-display'>#</p>
-                <button onClick={subtract} className='incrementor-btn'>-</button>
+                <button onClick={subtract} className='incrementor-btn minus'>-</button>
             </div>
         </div> 
     </div>

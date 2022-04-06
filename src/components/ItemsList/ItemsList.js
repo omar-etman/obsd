@@ -8,7 +8,8 @@ function ItemsList() {
   //for mobile view, a function to assign based on category to the accordions
   return (
     <div className='itemsList-container'>
-        <div className='itemsList-accordions'>
+        <div className='itemsList-accordions'
+        >
             <AccordionList/>
         </div>
         <ul className='itemsList-topBtns'>

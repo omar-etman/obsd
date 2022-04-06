@@ -46,9 +46,11 @@
     .topBtns-btn{
         background-color: white;
         border: 2px solid var(--red);
-        color: var(--orange);
+        color: var(--red);
         padding: 1rem;
         margin: 0 1rem;
+        border-radius: 0.25rem;
+        transition: all 0.25s ease-in-out;
     }
     
     .topBtns-btn:hover, .topBtns-btn:active {

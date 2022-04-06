@@ -8,10 +8,41 @@
 .cover-text{
     display: flex;
     flex-direction: column;
+    /* align-items: flex-start; */
+    justify-content: center;
+    text-align: left;
 }
 
 .cover-img{
     min-width: 12rem;
+}
+
+.text-main{
+    font-size: 2rem;
+    font-weight: 900;
+    margin-left: 1.5rem;
+}
+
+.text-tabsList{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.tabsList-tab{
+    list-style: none;
+    border-left: 18px solid var(--red);
+    background-color: var(--ltgrey);
+    padding: 0.25rem 0.25rem 0.25rem 1rem;
+    margin: 1rem 0;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    margin-right: 2rem;
+}
+
+.main-highLight {
+    color: var(--orange);
 }
 
 @media (min-width: 700px) {
