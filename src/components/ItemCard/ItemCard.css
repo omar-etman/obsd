@@ -9,25 +9,36 @@
     border: 2px solid red;
 }
 
-.card-info {
+.card-info, .item-details{
     display: flex;
     flex-direction: column;
     /* justify-content: flex-start; */
     align-items: flex-start;
+}
+
+.card-info {
     padding: 0.5rem;
-    width: 12rem;
+    width: 9rem;
+}
+
+.item-details {
+    text-align: left;
 }
 
 .card-img{
-    max-width: 12rem;
+    width: 10rem;
 }
 
 .item-name{
     font-weight: 900;
+    margin: 0.5rem 0;
 }
 
 .item-ingredients {
     font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
 }
 
 .card-incrementor {
@@ -58,5 +69,10 @@
 .incrementor-btn:hover {
     font-weight: bolder
 
+}
+
+.item-price {
+    font-weight: 600;
+    font-size: 0.9rem
 }
 

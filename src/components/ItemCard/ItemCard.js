@@ -14,9 +14,11 @@ function ItemCard() {
     <div className='card-container'>
         <img src={itemImg} alt='itemImg' className='card-img'/>
         <div className='card-info'>
-            <span className='item-name'>item's name</span>
-            <p className='item-ingredients'>item's ingredients, item's ingredients, item's ingredients</p>
-            <span>Price: item's price</span>
+            <div className='item-details'>
+                <h3 className='item-name'>item's name</h3>
+                <p className='item-ingredients'>item's ingredients, item's ingredients, item's ingredients</p>
+                <span className='item-price'>Price: item's price</span>
+            </div>
             <div className='card-incrementor'>
                 <button onClick={add} className='incrementor-btn'>+</button>
                 <p className='incrementor-display'>#</p>

@@ -16,6 +16,10 @@
     margin: 1rem 0;
 }
 
+/* .topBtns-btn {
+    display: none;
+} */
+
 .topBtns-btn{
     background-color: white;
     border: 2px solid var(--orange);
@@ -27,4 +31,10 @@
 .topBtns-btn:hover, .topBtns-btn:active {
     color: white;
     background-color: var(--orange);
+}
+
+.itemsList-display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
 }

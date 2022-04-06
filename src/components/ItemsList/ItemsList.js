@@ -16,6 +16,11 @@ function ItemsList() {
         </ul>
         <ul className='itemsList-display'>
             <li><ItemCard/></li>
+            <li><ItemCard/></li>
+            <li><ItemCard/></li>
+            <li><ItemCard/></li>
+            <li><ItemCard/></li>
+            <li><ItemCard/></li>
         </ul>
     </div>
   )
