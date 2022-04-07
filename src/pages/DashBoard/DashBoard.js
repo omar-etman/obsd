@@ -2,8 +2,8 @@ import { useState } from 'react'
 import './DashBoard.css'
 function DashBoard() {
 
-  const [pendingView, setPendingView] = useState(true)
-  const [completedView, setCompletedView] = useState(false)
+  const [pendingView, setPendingView] = useState(false)
+  const [completedView, setCompletedView] = useState(true)
   const dashBoardToggler = (e) => {
       setCompletedView(!completedView)
       setPendingView(!pendingView)
@@ -12,8 +12,9 @@ function DashBoard() {
   return (
     <div className='dashBoard-container'>
         <aside>
+            <h1>Dashboard</h1>
             <ul className='dashBoard-nav'>
-                <li onClick={dashBoardToggler} className='nav-item'>Pending</li>
+                <li onClick={dashBoardToggler} className='nav-item'>Pending  <span>#</span></li>
                 <li onClick={dashBoardToggler} className='nav-item'>Completed</li>
             </ul>
         </aside>
@@ -31,7 +32,6 @@ function DashBoard() {
                 :null
             }
         </main>
-        dashboard
     </div>
   )
 }

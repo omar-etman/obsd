@@ -1,0 +1,61 @@
+.dashBoard-container {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.dashBoard-container aside {
+    /* padding: 1rem; */
+    margin-right: 2rem;
+    position: fixed;
+}
+
+.dashBoard-container h1 {
+    padding: 1rem 5rem 1rem 3rem;
+    background-color: var(--Grey);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.dashBoard-container main {
+    min-height: 100vh;
+    flex-flow: row wrap;
+    display: flex;
+    background-color: white;
+    margin-left: 16.5rem;
+    width: 100%;
+    padding: 1rem;
+    color: var(--black);
+    justify-content: center;
+    align-items: center;
+}
+
+.dashBoard-nav {
+    list-style: none;
+    text-align: left;
+    font-size: 1.2rem;
+    padding-left: 0px;
+    margin-top: 0;
+}
+
+.nav-item {
+    border-bottom: 2px solid var(--Grey);
+    padding: 1rem 1.2rem;
+    transition: all 0.5s linear;
+}
+
+.nav-item:hover, .nav-item:active {
+    border-left: 26px solid var(--red);
+    background-color: black;
+}
+
+.nav-item span {
+    margin-left: 5rem;
+    background-color: var(--blue);
+    padding: 0 0.5rem;
+    border-radius: 0.25rem;
+}
+
+
+
