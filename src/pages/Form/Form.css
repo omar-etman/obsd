@@ -1,0 +1,80 @@
+
+.form-container {
+    background-color: white;
+    color: var(--black);
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-content: flex-start; */
+    align-items: flex-start;
+    padding: 4rem 0;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+input {
+    border: none;
+    padding: 0.5rem;
+    border-top: 1px solid var(--Grey);
+    width: 14rem;
+}
+
+.form-orders {
+    display: none;
+}
+
+.buttons-cancel, .buttons-orderNow {
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.25s ease-in-out;
+}
+
+.buttons-orderNow {
+    background-color: var(--orange);
+    color: white;
+    border: none;
+    margin-right: 2rem;
+}
+
+.buttons-cancel {
+    background-color: white;
+    color: var(--orange);
+    border: 2px solid var(--orange);
+}
+
+.buttons-orderNow:hover {
+    background-color: var(--red);
+}
+
+.buttons-cancel:hover {
+    border: 2px solid var(--red);
+    color: var(--red);
+}
+
+@media (min-width: 700px){
+    .form-orders {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 6rem;
+        border-left: 1px solid var(--Grey);
+        padding-left: 8rem;
+    }
+
+    .orders-subTotal {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+}
