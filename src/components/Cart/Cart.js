@@ -7,12 +7,12 @@ function Cart() {
     <div className='cart-container'>
         {/* cartitems.length === false ? <div className='cart-noItems></div> : */}
         <ul className='cart-list'>
-            <li>map</li>
-            <li>map</li>
-            <li>map</li>
-            <li>map</li>
+            <li><ItemCard/></li>
+            <li><ItemCard/></li>
+            <li><ItemCard/></li>
+            <li><ItemCard/></li>
         </ul>
-        <p>subtotal: 'item's price'</p>
+        <p className='cart-subTotal'>subtotal: 'item's price'</p>
         <button className='cart-checkout'>
             CHECKOUT
         </button>

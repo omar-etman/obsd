@@ -11,6 +11,7 @@
     /* align-items: flex-start; */
     justify-content: center;
     text-align: left;
+    padding: 0 2rem;
 }
 
 .cover-img{
@@ -39,6 +40,12 @@
     border-bottom: 1px solid gray;
     border-right: 1px solid gray;
     margin-right: 2rem;
+    transition: all 0.25s ease-in-out;
+}
+
+.tabsList-tab:hover {
+    transform: translateX(0.5rem);
+    background-color: black;
 }
 
 .main-highLight {

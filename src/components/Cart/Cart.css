@@ -1,0 +1,38 @@
+.cart-container {
+    width: 100%;
+    height: 350px;
+}
+
+
+.cart-list {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    justify-self: center;
+    /* margin-right: 3rem; */
+    padding: 0;
+    height: 100%;
+}
+
+
+.cart-subTotal {
+    font-weight: 900;
+}
+
+.cart-checkout {
+    border: none;
+    background-color: var(--orange);
+    color: white;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
+
+@media (min-width: 700px){
+    .cart-list{
+        height: 300px;
+    }
+
+    .cart-subTotal {
+        border-bottom: 1px solid;
+        padding-bottom: 1rem;
+    }
+}

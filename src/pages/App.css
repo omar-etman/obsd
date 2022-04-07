@@ -14,15 +14,14 @@
 
 .App-Cart{
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   width: 100%;
   background-color: white;
   color: var(--black);
   position: absolute;
-  margin-top: 6.8rem;
-  height: 100%;
-  padding-right: 1.7rem;
+  margin-top: 4.8rem;
+  height: 157%;
 }
 
 .App-footer {
