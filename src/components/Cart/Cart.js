@@ -1,5 +1,5 @@
 import React from 'react'
-import ItemCard from '../ItemCard/ItemCard'
+import CartItemCard from '../CartItemCard/CartItemCard'
 import { Link } from 'react-router-dom'
 import './Cart.css'
 function Cart() {
@@ -8,10 +8,10 @@ function Cart() {
     <div className='cart-container'>
         {/* cartitems.length === false ? <div className='cart-noItems></div> : */}
         <ul className='cart-list'>
-            <li><ItemCard/></li>
-            <li><ItemCard/></li>
-            <li><ItemCard/></li>
-            <li><ItemCard/></li>
+            <li><CartItemCard/></li>
+            <li><CartItemCard/></li>
+            <li><CartItemCard/></li>
+            <li><CartItemCard/></li>
         </ul>
         <p className='cart-subTotal'>subtotal: 'item's price'</p>
         <Link to ='/form'>

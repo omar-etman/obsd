@@ -78,11 +78,8 @@
         margin-top: 31.7rem;
         padding: 1rem;
         z-index: 2;
-        width: 22rem;
+        width: 25rem;
         justify-content: center;
-        /* overflow-y: scroll; */
-        /* height: 10rem; */
-        /* margin-bottom: 2rem;*/
     }
 
     .nav-buttons, .nav-brand {
