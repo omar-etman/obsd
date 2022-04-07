@@ -24,6 +24,11 @@
     color: white;
     border-radius: 0.25rem;
     padding: 0.5rem;
+    transition: all 0.25s ease-in-out;
+}
+
+.cart-checkout:hover {
+    background-color: var(--red);
 }
 
 @media (min-width: 700px){
