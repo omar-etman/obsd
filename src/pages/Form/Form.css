@@ -77,4 +77,11 @@ input {
         font-weight: bold;
         font-size: 1.2rem;
     }
+
+    
+    .ordered-cartItems-list {
+        height: 320px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
 }
