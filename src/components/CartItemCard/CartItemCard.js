@@ -1,39 +1,57 @@
-import React from 'react'
-import './CartItemCard.css'
-import itemImg from '../../assets/—Pngtree—seafood pizza with cheese_4942142.png'
+import React from 'react';
+import './CartItemCard.css';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-function CartItemCard() {
+import { connect } from 'react-redux';
+import {
+  addToCart,
+  reduceFromCart,
+  removeFromCart,
+} from '../../redux/cart/cartActions';
 
-  
-const add = (e) => {
-    //add amount --> edit within the mapped array
-}
+function CartItemCard({ item, addToCart, reduceFromCart, removeFromCart }) {
+  const add = (e) => {
+    addToCart(item);
+  };
 
-const subtract = (e) => {
-    //subtract amount --> edit within the mapped array
-}
+  const subtract = (e) => {
+    reduceFromCart(item);
+  };
 
-const remove = (e) => {
-    //pops item out of the cart array
-}
+  const remove = (e) => {
+    removeFromCart(item);
+  };
   return (
-    <div className='card-container'>
-      <img src={itemImg} alt='itemImg' className='card-img'/>
-      <div className='card-info'>
-        <div className='item-details'>
-            <h3 className='item-name'>item's name</h3>
+    <div className="card-container">
+      <img src={item?.img} alt="itemImg" className="card-img" />
+      <div className="card-info">
+        <div className="item-details">
+          <h3 className="item-name">{item?.name}</h3>
         </div>
-        <div className='card-incrementor'>
-            <span>QTY: </span>
-            <button onClick={subtract} className='incrementor-btn minus'>-</button>
-            <p className='incrementor-display'>#</p>
-            <button onClick={add} className='incrementor-btn'>+</button>
+        <div className="card-incrementor">
+          <span>QTY: </span>
+          <button onClick={subtract} className="incrementor-btn minus">
+            -
+          </button>
+          <p className="incrementor-display">{item?.quantity}</p>
+          <button onClick={add} className="incrementor-btn">
+            +
+          </button>
         </div>
-        <span className='item-price'>Price: item's price</span>
+        <span className="item-price">Price: {item?.price}</span>
       </div>
-      <span onClick={remove} style={{marginBottom: "5rem"}}><DeleteForeverIcon/></span>
+      <span onClick={remove} style={{ marginBottom: '5rem' }}>
+        <DeleteForeverIcon />
+      </span>
     </div>
-  )
+  );
 }
 
-export default CartItemCard
+function mapStateToProps(state) {
+  return { cart: state.cartReducer.cartItems };
+}
+
+export default connect(mapStateToProps, {
+  addToCart,
+  reduceFromCart,
+  removeFromCart,
+})(CartItemCard);

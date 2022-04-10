@@ -1,51 +1,38 @@
 import { useState } from 'react'
-import CartItemCard from '../../components/CartItemCard/CartItemCard'
+import CheckOutList from '../../components/CheckOutList/CheckOutList';
+import { connect } from 'react-redux';
+import { useFormik } from 'formik';
 import './Form.css'
+import { addOrder } from '../../redux/orders/ordersActions'
 
-function Form() {
+function Form({cart, order}) {
 
-  //recieves the cart array
-  //sends orders to dashboard
-
-  const [name, setName] = useState("");
-  const [mobile, setMobile] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-
-  const updateName = (e) => {
-      setName(e.target.value)
-  }
-
-  const updateMobile = (e) => {
-      setMobile(e.target.value)
-  }
-
-  const updateAddress = (e) => {
-      setAddress(e.target.value)
-  }
-
-  const updateCity = (e) => {
-      setCity(e.target.value)
-  }
+  const formik = useFormik({
+      initialValues: {
+          orderBy:'',
+          mobile:'',
+          address:'',
+          city:'',
+          items:cart
+      },onSubmit: values => {
+          addOrder(values)
+          console.log(order)
+      }
+  })
+  
 
   return (
     <div className='form-container'>
         <div className='form-orders'>
-            <ul className='ordered-cartItems-list'>
-                <li><CartItemCard/></li>
-                <li><CartItemCard/></li>
-                <li><CartItemCard/></li>
-                <li><CartItemCard/></li>
-            </ul>
-            <p className='orders-subTotal'>Subtotal: LE subtotal</p>
+            <CheckOutList/>
         </div>
-        <form>
-            <label htmlFor="name">
+        <form onSubmit={formik.handleSubmit}>
+            <label htmlFor="orderBy">
                 Name
                 <input
-                    id="name"
-                    onChange={updateName}
-                    value={name}
+                    id="orderBy"
+                    onInput={formik.handleChange}
+                    value={formik.values.orderBy}
                     placeholder="i.e John Smith"
                 />
             </label>
@@ -53,17 +40,17 @@ function Form() {
                 Mobile
                 <input
                     id="mobile"
-                    onChange={updateMobile}
-                    value={mobile}
+                    onInput={formik.handleChange}
+                    value={formik.values.mobile}
                     placeholder="+201234567890"
                 />
             </label>
             <label htmlFor="address">
                 Address
                 <input
-                    id="name"
-                    onChange={updateAddress}
-                    value={address}
+                    id="address"
+                    onInput={formik.handleChange}
+                    value={formik.values.address}
                     placeholder="residence number, street, area."
                 />
             </label>
@@ -71,13 +58,13 @@ function Form() {
                 City
                 <input
                     id="city"
-                    onChange={updateCity}
-                    value={city}
+                    onInput={formik.handleChange}
+                    value={formik.values.city}
                     placeholder="Cairo, Egypt"
                 />
             </label>
             <div className='form-buttons'>
-                <button className='buttons-orderNow'>Order Now</button>
+                <button type='submit' className='buttons-orderNow'>Order Now</button>
                 <button className='buttons-cancel'>cancel</button>
             </div>
         </form>
@@ -85,4 +72,12 @@ function Form() {
   )
 }
 
-export default Form
+
+function mapStateToProps(state, ownProps) {
+    return {
+        cart: state.cartReducer.cartItems,
+        order: state.ordersReducer.orderLine
+    };
+  }
+  
+  export default connect(mapStateToProps)(Form);
