@@ -5,9 +5,11 @@ import RestaurantIcon from '@mui/icons-material/Restaurant';
 import Cart from '../Cart/Cart'
 import BikeIcon from '../../assets/fastDelivery.png'
 import './Nav.css'
+import {useSelector} from 'react-redux'
 
-function Nav({dropDown3, toggleDropDown3}) {
-
+function Nav({dropDown3, toggleDropDown3, viewDropDown3}) {
+  
+  const cart = useSelector((state) => state.cartReducer.cartItems )
   return (
     <div className='nav-container'>
         <Link to = "/">
@@ -22,7 +24,7 @@ function Nav({dropDown3, toggleDropDown3}) {
             <li className='buttons-btn'>Menu</li>
             <li className='buttons-btn'>Most Popular</li>
             <li className='buttons-bikeBtn' onClick={toggleDropDown3}>
-                <Badge badgeContent={4} color="primary" >
+                <Badge badgeContent={cart.length} color="primary" >
                     <img src={BikeIcon} alt='bikeIcon' className='bikebtn-icon'/>
                 </Badge>
             </li>

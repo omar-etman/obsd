@@ -6,11 +6,14 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ItemCard from '../ItemCard/ItemCard';
 import './AccordionList.css'
-function AccordionList() {
+function AccordionList({items}) {
 
-  //props passed = array to be mapped
-  //category prop remember that to name it
-
+  const popular = items.POPULAR
+  const pizza = items.PIZZA
+  const burger = items.BURGER
+  const crepe = items.CREPE
+  const drinks = items.DRINKS
+  
   return (
     <Fragment>
        <Accordion>
@@ -24,14 +27,13 @@ function AccordionList() {
                 <AccordionDetails>
                 <Typography>
                     <ul className='accordionList-expanded'>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
+                      {popular.map((el, index) => {
+                        return (
+                          <li key={el.id}>
+                            <ItemCard  item={el} />
+                          </li>
+                        );
+                      })}
                     </ul>
                 </Typography>
                 </AccordionDetails>
@@ -47,14 +49,13 @@ function AccordionList() {
                 <AccordionDetails>
                 <Typography>
                     <ul className='accordionList-expanded'>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
+                      {pizza.map((el, index) => {
+                        return (
+                          <li key={el.id}>
+                            <ItemCard  item={el} />
+                          </li>
+                        );
+                      })}
                     </ul>
                 </Typography>
                 </AccordionDetails>
@@ -70,14 +71,13 @@ function AccordionList() {
                 <AccordionDetails>
                 <Typography>
                     <ul className='accordionList-expanded'>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
+                      {burger.map((el, index) => {
+                        return (
+                          <li key={el.id}>
+                            <ItemCard  item={el} />
+                          </li>
+                        );
+                      })}
                     </ul>
                 </Typography>
                 </AccordionDetails>
@@ -93,15 +93,14 @@ function AccordionList() {
                 <AccordionDetails>
                 <Typography>
                     <ul className='accordionList-expanded'>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                    </ul>
+                        {crepe.map((el, index) => {
+                          return (
+                            <li key={el.id}>
+                              <ItemCard  item={el} />
+                            </li>
+                          );
+                        })}
+                      </ul>
                 </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -116,15 +115,14 @@ function AccordionList() {
                 <AccordionDetails>
                 <Typography>
                     <ul className='accordionList-expanded'>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                      <li><ItemCard/></li>
-                    </ul>
+                        {drinks.map((el, index) => {
+                          return (
+                            <li key={el.id}>
+                              <ItemCard  item={el} />
+                            </li>
+                          );
+                        })}
+                      </ul>
                 </Typography>
                 </AccordionDetails>
             </Accordion> 

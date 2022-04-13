@@ -3,7 +3,11 @@ import CartItemCard from '../CartItemCard/CartItemCard';
 import '../Cart/Cart.css';
 import { connect } from 'react-redux';
 function CheckOutList({ cart }) {
-  console.log(cart);
+
+  const subTotal = cart.reduce((acc, curr) => {
+    return acc + curr.price * curr.quantity
+  },0)
+
   return (
     <div className="cart-container">
       <ul className="cart-list">
@@ -15,7 +19,7 @@ function CheckOutList({ cart }) {
           );
         })}
       </ul>
-      <p className="cart-subTotal">subtotal: 'item's price'</p>
+      <p className="cart-subTotal">{`Subtotal = ${subTotal} LE`}</p>
     </div>
   );
 }

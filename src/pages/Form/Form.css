@@ -7,6 +7,7 @@
     margin-top: 4rem;
     align-items: center;
     flex-direction: row-reverse;
+    min-height: 48rem;
 }
 
 form {

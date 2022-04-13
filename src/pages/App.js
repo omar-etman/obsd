@@ -5,16 +5,15 @@ import Cart from '../components/Cart/Cart';
 import DashBoard from './DashBoard/DashBoard';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import { useState } from 'react'
-import { BrowserRouter , Route, Routes} from 'react-router-dom';
+import { BrowserRouter , Route, Routes, Link} from 'react-router-dom';
 import './App.css';
-import { Suspense } from 'react';
 
 function App() {
 
   const [dropDown3, viewDropDown3] = useState(false);
 
   const toggleDropDown3 = (e) => {
-      viewDropDown3(!dropDown3)
+    viewDropDown3(!dropDown3)
   }
 
   return (
@@ -29,7 +28,9 @@ function App() {
           {
             dropDown3 === true ?
             <div className='App-Cart'>
-              <Cart/>
+              <Cart
+              toggleDropDown3={toggleDropDown3}
+              />
             </div>
             : null
           }

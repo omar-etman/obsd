@@ -4,10 +4,16 @@ import { connect } from 'react-redux';
 import { useFormik } from 'formik';
 import './Form.css'
 import { addOrder } from '../../redux/orders/ordersActions'
+import {useSelector} from 'react-redux'
+import {useDispatch} from 'react-redux'
 
-function Form({cart, order}) {
-
+function Form() {
+  
+  const cart = useSelector((state) => state.cartReducer.cartItems )
+  const order = useSelector((state) => state.ordersReducer.orderLine )
+  const dispatch = useDispatch()
   const formik = useFormik({
+
       initialValues: {
           orderBy:'',
           mobile:'',
@@ -15,7 +21,8 @@ function Form({cart, order}) {
           city:'',
           items:cart
       },onSubmit: values => {
-          addOrder(values)
+          dispatch(addOrder(values))
+          console.log("values:", values)
           console.log(order)
       }
   })
@@ -64,7 +71,7 @@ function Form({cart, order}) {
                 />
             </label>
             <div className='form-buttons'>
-                <button type='submit' className='buttons-orderNow'>Order Now</button>
+                <button onClick={formik.handleSubmit} className='buttons-orderNow'>Order Now</button>
                 <button className='buttons-cancel'>cancel</button>
             </div>
         </form>
@@ -72,12 +79,5 @@ function Form({cart, order}) {
   )
 }
 
-
-function mapStateToProps(state, ownProps) {
-    return {
-        cart: state.cartReducer.cartItems,
-        order: state.ordersReducer.orderLine
-    };
-  }
   
-  export default connect(mapStateToProps)(Form);
+  export default Form;

@@ -67,19 +67,20 @@
         font-weight: bold;
     }
 
-    .nav-dropDown-3{
-        height: 401px;
+    .nav-dropDown-3 {
+        height: 25rem;
         display: flex;
         position: absolute;
         background-color: white;
         box-shadow: 0 4px 25px 0 var(--ltGrey);
         border-radius: 0.25rem;
         color: var(--black);
-        margin-top: 31.7rem;
+        margin-top: 32rem;
         padding: 1rem;
         z-index: 2;
         width: 25rem;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
     .nav-buttons, .nav-brand {

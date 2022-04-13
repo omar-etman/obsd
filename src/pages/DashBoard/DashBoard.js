@@ -1,7 +1,11 @@
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import './DashBoard.css'
-function DashBoard() {
+function DashBoard({order}) {
+  
 
+  const cart = useSelector((state) => state.cartReducer.cartItems)
+  
   const [pendingView, setPendingView] = useState(false)
   const [completedView, setCompletedView] = useState(true)
   const dashBoardToggler = (e) => {
@@ -14,14 +18,19 @@ function DashBoard() {
         <aside>
             <h1>Dashboard</h1>
             <ul className='dashBoard-nav'>
-                <li onClick={dashBoardToggler} className='nav-item'>Pending  <span>#</span></li>
+                <li onClick={dashBoardToggler} className='nav-item'>Pending  <span>{order.length}</span></li>
                 <li onClick={dashBoardToggler} className='nav-item'>Completed</li>
             </ul>
         </aside>
         <main>
             { pendingView === true?
                 <div className='dashBoard-pending-container'>
-                    pending
+                    <ul className='pending-list'>
+                        <li>pending</li>
+                        <li>pending</li>
+                        <li>pending</li>
+                        <li>pending</li>
+                    </ul>
                 </div>
                 :null
             }

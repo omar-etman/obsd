@@ -1,9 +1,12 @@
-const INITIAL_STATE = { orderLine: [] };
+const INITAL_STATE = { cartItems: [] };
 
-export default function ordersReducer(state=INITIAL_STATE, action) {
+export default function ordersReducer(state=INITAL_STATE, action) {
     switch (action.type){
         case 'ADD_ORDER':
-            return state.concat([action.payLoad])
+            return [
+                ...state,
+                action.payLoad,
+            ]
         default:
             return state;
 

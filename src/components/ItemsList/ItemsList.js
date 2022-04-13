@@ -13,7 +13,9 @@ function ItemsList() {
   return (
     <div className="itemsList-container">
       <div className="itemsList-accordions">
-        <AccordionList />
+        <AccordionList 
+          items={items}
+        />
       </div>
       <ul
         className="itemsList-topBtns"
@@ -34,8 +36,8 @@ function ItemsList() {
       <ul className="itemsList-display">
         {items[selectedItem].map((el, index) => {
           return (
-            <li>
-              <ItemCard key={el.id} item={el} />
+            <li key={el.index}>
+              <ItemCard  item={el} />
             </li>
           );
         })}
