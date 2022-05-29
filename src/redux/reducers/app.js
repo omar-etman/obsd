@@ -24,31 +24,21 @@ export const appSlice = createSlice({
         
             console.log({ item, payload, state })
         },
-        reduceFromCart(state,{payload}) {
-
-            // const item = state.cart.find((item) => {
-            //     return item.id === payload.id
-            // })
-                
-            // if (payload.quantity === 1) {
-            //     state.cart.filter((item) => item.id !== payload.id)
-            //     console.log(state.cart)
-            // }
-
-            state.cart.filter(item => {return (item.id !== payload.id) || (item.id === payload.id && payload.quantity > 1)})
-
-
-                .map((item) => {
-                
-                if(item.id === payload.id && item.quantity > 0){
-                    item.quantity --
-                }
-                return item
-
+        reduceFromCart(state, { payload }) {
+            
+            const item = state.cart.find((item) => {
+                return item.id === payload.id
             })
+
+            if (item) {
+                if(item.quantity > 1){
+                    item.quantity --
+                }else{
+                    state.cart=state.cart.filter((item) => item.id !== payload.id)
+                }
+            }
             
-            
-        },
+		},
         removeFromCart(state, {payload}) {
             state.cart = state.cart.filter((item) => {
                 return item.id !== payload.id

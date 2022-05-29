@@ -39,7 +39,9 @@ function App() {
             : null
           }
           <Routes>
-            <Route path = "/" element={<Home/>}/>
+            <Route path = "/" element={<Home 
+              dropDown={dropDown3}
+            />}/>
             <Route path = "/form" element={<Form/>}/>
             <Route path = "/dashboard" element={<DashBoard/>}/>
           </Routes>

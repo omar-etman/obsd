@@ -22,7 +22,8 @@
   color: var(--black);
   position: absolute;
   margin-top: 4.8rem;
-  height: 100vh;
+  min-height: 95vh;
+  max-height: 100vh;
   z-index: 7;
 }
 
