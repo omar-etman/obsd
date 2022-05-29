@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Badge } from '@mui/material'
 import RestaurantIcon from '@mui/icons-material/Restaurant';
@@ -9,7 +8,7 @@ import {useSelector} from 'react-redux'
 
 function Nav({dropDown3, toggleDropDown3, viewDropDown3}) {
   
-  const cart = useSelector((state) => state.cartReducer.cartItems )
+  const cart = useSelector((state) => state.app.cart)
   return (
     <div className='nav-container'>
         <Link to = "/">
@@ -24,7 +23,7 @@ function Nav({dropDown3, toggleDropDown3, viewDropDown3}) {
             <li className='buttons-btn'>Menu</li>
             <li className='buttons-btn'>Most Popular</li>
             <li className='buttons-bikeBtn' onClick={toggleDropDown3}>
-                <Badge badgeContent={cart.length} color="primary" >
+                <Badge badgeContent={cart?.length} color="primary" >
                     <img src={BikeIcon} alt='bikeIcon' className='bikebtn-icon'/>
                 </Badge>
             </li>

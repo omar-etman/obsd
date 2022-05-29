@@ -1,16 +1,15 @@
 import { useState } from 'react'
 import CheckOutList from '../../components/CheckOutList/CheckOutList';
-import { connect } from 'react-redux';
 import { useFormik } from 'formik';
 import './Form.css'
-import { addOrder } from '../../redux/orders/ordersActions'
+import { addOrder } from '../../redux/reducers/app'
 import {useSelector} from 'react-redux'
 import {useDispatch} from 'react-redux'
 
 function Form() {
   
-  const cart = useSelector((state) => state.cartReducer.cartItems )
-  const order = useSelector((state) => state.ordersReducer.orderLine )
+  const cart = useSelector((state) => state.app.cart )
+  const order = useSelector((state) => state.app.orders )
   const dispatch = useDispatch()
   const formik = useFormik({
 
