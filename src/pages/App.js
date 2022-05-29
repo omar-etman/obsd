@@ -4,7 +4,7 @@ import Form from './Form/Form';
 import Cart from '../components/Cart/Cart';
 import DashBoard from './DashBoard/DashBoard';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BrowserRouter , Route, Routes } from 'react-router-dom';
 import './App.css';
 import {useSelector} from 'react-redux'
@@ -15,10 +15,14 @@ function App() {
   const [dropDown3, viewDropDown3] = useState(false);
 
   const toggleDropDown3 = (e) => {
-    cart.length
-    ?viewDropDown3(!dropDown3)
-    :viewDropDown3(false)
+    console.log(dropDown3)
+    viewDropDown3(!dropDown3)
   }
+  
+  useEffect(()=>{
+    if(cart.length === 0) viewDropDown3(false)
+    
+  },[cart.length])
 
   return (
     <div className="App">

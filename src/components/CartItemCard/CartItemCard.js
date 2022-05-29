@@ -24,7 +24,7 @@ function CartItemCard ({item}) {
   };
   return (
     <div className="card-container">
-      <img src={item?.img} alt="itemImg" className="card-img" />
+      <img src={item?.image} alt="itemImg" className="card-img" />
       <div className="card-info">
         <div className="item-details">
           <h3 className="item-name">{item?.name}</h3>

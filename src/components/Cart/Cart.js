@@ -25,7 +25,7 @@ function Cart({toggleDropDown3}) {
       </ul>
       <p className="cart-subTotal">{`Subtotal = ${subTotal} LE`}</p>
       <Link to="/form">
-          <button className="cart-checkout" onClick={()=>toggleDropDown3()}>CHECKOUT</button>
+          <button className="cart-checkout" onClick={toggleDropDown3}>CHECKOUT</button>
       </Link>
     </div>
   );

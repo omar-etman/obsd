@@ -1,39 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import ItemCard from '../ItemCard/ItemCard';
 import AccordionList from '../AccordionList/AccordionList';
+import { getProducts} from '../../API';
 import './ItemsList.css';
-import { items } from '../../dummyData/dummy';
+
 
 function ItemsList({dropDown}) {
+  
+  const [filteredProds, setFilteredProds] = useState([]);
+  const [prods, setProds] = useState([])
+  async function setData() {
+    try{
+    const productsDataResponse = await getProducts()
+    const productsData = await productsDataResponse.data
+    setProds(productsData)
+    setFilteredProds(productsData?.filter(p => p.isPopular === true))
 
-  const [selectedItem, setSelectedItem] = useState('POPULAR');
+  }catch(err){
+    console.log(err); 
+    }
 
+  } 
+
+  const menuFilter = (e) => {
+    
+    const categName = e.target.closest('button')?.innerText;
+  
+    if(categName === "POPULAR"){
+      setFilteredProds(prods?.filter(p => p.isPopular))
+    }else{
+      setFilteredProds(prods?.filter((p) => p.category.name === categName))
+    }    
+  }
+  
+  useEffect(() => {
+  setData()
+
+  }, [])
+  
   return (
     <div className="itemsList-container">
       <div className="itemsList-accordions">
         <AccordionList 
-          items={items}
+          prods={prods}
           dropDown={dropDown}
         />
       </div>
       <ul
         className="itemsList-topBtns"
-        onClick={(e) => {
-          console.log(e.target.closest('button')?.innerText);
-          const item = e.target.closest('button')?.innerText;
-          if (item) {
-            setSelectedItem(item);
-          }
-        }}
+        onClick={(e) => menuFilter(e)}
       >
-        <button className="topBtns-btn">POPULAR</button>
         <button className="topBtns-btn">PIZZA</button>
         <button className="topBtns-btn">BURGER</button>
         <button className="topBtns-btn">CREPE</button>
         <button className="topBtns-btn">DRINKS</button>
+        <button className="topBtns-btn">POPULAR</button>
+
       </ul>
       <ul className="itemsList-display">
-        {items[selectedItem].map((el, index) => {
+        {filteredProds?.map((el, index) => {
           return (
             <li key={el.index}>
               <ItemCard  item={el} />

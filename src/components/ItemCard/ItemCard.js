@@ -38,7 +38,7 @@ function ItemCard({ item }) {
   return (
     <div className="card-container" style={{ width: '22em', height: '17em' }}>
       <img
-        src={item?.img}
+        src={item?.image}
         alt="itemImg"
         className="card-img"
         style={{ width: '10em', height: '10em' }}

@@ -1,21 +1,21 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ItemCard from '../ItemCard/ItemCard';
+import {useDispatch, useSelector} from 'react-redux'
 import './AccordionList.css'
-import { items } from '../../dummyData/dummy';
-function AccordionList({dropDown, prods}) {
-
-  // popularProds = prods.filter((p) => p.isPopular === true)
+function AccordionList({items, dropDown}) {
 
   const popular = items.POPULAR
   const pizza = items.PIZZA
   const burger = items.BURGER
   const crepe = items.CREPE
   const drinks = items.DRINKS
+
+//   useEffect()
   //items.filter((i) => i.category.id === BURGER)
   //items.filter((i) => i.category.name === PIZZA)
   //items.filter((i) => i.category.name === CREPE)

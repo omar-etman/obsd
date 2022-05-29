@@ -6,9 +6,10 @@ import BikeIcon from '../../assets/fastDelivery.png'
 import './Nav.css'
 import {useSelector} from 'react-redux'
 
-function Nav({dropDown3, toggleDropDown3, viewDropDown3}) {
+function Nav({dropDown3, toggleDropDown3}) {
   
   const cart = useSelector((state) => state.app.cart)
+  console.log(dropDown3)
   return (
     <div className='nav-container'>
         <Link to = "/">
@@ -30,11 +31,13 @@ function Nav({dropDown3, toggleDropDown3, viewDropDown3}) {
             {
                 dropDown3 === true ?
 
-                <div className='nav-dropDown-3'>
-                    <Cart/>
-                </div>
+                (<div className='nav-dropDown-3'>
+                    <Cart
+                        toggleDropDown3={toggleDropDown3}
+                    />
+                </div>)
 
-                : null
+                : (null)
             }
         </ul>
     </div>

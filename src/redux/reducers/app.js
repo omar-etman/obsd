@@ -2,13 +2,16 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     cart: [],
-    orders:[]
+    orders:[],
+    products:[],
+    categories:[]
 }
 
 export const appSlice = createSlice({
     name:'app',
     initialState,
     reducers:{
+
         addToCart(state, { payload }) {
             const item = state.cart.find((item) => {
                 return item.id === payload.id
@@ -53,6 +56,6 @@ export const appSlice = createSlice({
     }
 })
 
-export const {addToCart, reduceFromCart, removeFromCart, addOrder} = appSlice.actions
+export const {addToCart, reduceFromCart, removeFromCart, addOrder, setProducts, setCategories} = appSlice.actions
 
 export default appSlice.reducer
