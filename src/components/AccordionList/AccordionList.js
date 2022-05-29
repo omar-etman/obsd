@@ -9,18 +9,13 @@ import './AccordionList.css'
 import { items } from '../../dummyData/dummy';
 function AccordionList({dropDown, prods}) {
 
-  // popularProds = prods.filter((p) => p.isPopular === true)
+  const popularProds = prods.filter((p) => p.isPopular === true)
+  
+  const burger = prods.filter((p) => p.category.name === "BURGER")
+  const pizza = prods.filter((p) => p.category.name === "PIZZA")
+  const crepe = prods.filter((p) => p.category.name === "CREPE")
+  const drinks = prods.filter((p) => p.category.name === "DRINKS")
 
-  const popular = items.POPULAR
-  const pizza = items.PIZZA
-  const burger = items.BURGER
-  const crepe = items.CREPE
-  const drinks = items.DRINKS
-  //items.filter((i) => i.category.id === BURGER)
-  //items.filter((i) => i.category.name === PIZZA)
-  //items.filter((i) => i.category.name === CREPE)
-  //items.filter((i)) => i.category.name ==== DRINKS)
-  //items.filter((i) => i.isPopular === true)
   return (
     <div className={ dropDown ? 'accordion-hide' : 'accordion-show'}>
        <Accordion>
@@ -34,7 +29,7 @@ function AccordionList({dropDown, prods}) {
                 <AccordionDetails>
                 <Typography>
                     <ul className='accordionList-expanded'>
-                      {popular.map((el, index) => {
+                      {popularProds.map((el, index) => {
                         return (
                           <li key={el.id}>
                             <ItemCard  item={el} />

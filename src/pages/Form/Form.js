@@ -1,14 +1,17 @@
 import CheckOutList from '../../components/CheckOutList/CheckOutList';
+import {useNavigate} from "react-router-dom"
 import { useFormik } from 'formik';
 import './Form.css'
 import { addOrder } from '../../redux/reducers/app'
 import {useSelector} from 'react-redux'
 import {useDispatch} from 'react-redux'
+import {createOrder} from '../../API'
 
 function Form() {
   
   const cart = useSelector((state) => state.app.cart )
   const order = useSelector((state) => state.app.orders )
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const formik = useFormik({
 
@@ -19,7 +22,9 @@ function Form() {
           city:'',
           items:cart
       },onSubmit: values => {
+          createOrder(values)
           dispatch(addOrder(values))
+          navigate('/')
           console.log("values:", values)
           console.log(order)
       }
