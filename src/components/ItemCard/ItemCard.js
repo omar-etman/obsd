@@ -1,25 +1,26 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-// import itemImg from '../../assets/—Pngtree—seafood pizza with cheese_4942142.png';
 import './ItemCard.css';
-import { addToCart, reduceFromCart } from '../../redux/cart/cartActions';
+import { addToCart, reduceFromCart } from '../../redux/reducers/app';
+import {useSelector, useDispatch} from 'react-redux'
+import {useEffect} from 'react'
 
-function ItemCard({ item, addToCart, reduceFromCart, cart }) {
-  // const [quantity, setQuantity] = useState(0);
-  console.log(cart);
+
+function ItemCard({ item }) {
+
+  const dispatch = useDispatch()
+
+  const cart = useSelector((state) => state.app.cart)
+  
   const add = () => {
-    addToCart(item);
-    // setQuantity(quantity + 1);
+    dispatch(addToCart(item));
   };
 
+
   const subtract = () => {
-    reduceFromCart(item);
-    // setQuantity(quantity > 0 ? quantity - 1 : 0);
+    dispatch(reduceFromCart(item));
   };
 
   const quan = (item) => {
     if (cart.length > 0) {
-      console.log(item, cart[0]);
       const x = cart.filter((el) => {
         return el?.name === item?.name;
       });
@@ -29,6 +30,10 @@ function ItemCard({ item, addToCart, reduceFromCart, cart }) {
 
     return 0;
   };
+
+  // useEffect(() => {
+  //   console.log({cart})
+  // }, [cart])
 
   return (
     <div className="card-container" style={{ width: '22em', height: '17em' }}>
@@ -58,10 +63,5 @@ function ItemCard({ item, addToCart, reduceFromCart, cart }) {
   );
 }
 
-function mapStateToProps(state) {
-  return { cart: state.cartReducer.cartItems };
-}
 
-export default connect(mapStateToProps, { addToCart, reduceFromCart })(
-  ItemCard
-);
+export default ItemCard;

@@ -1,9 +1,11 @@
 import React from 'react';
 import CartItemCard from '../CartItemCard/CartItemCard';
 import '../Cart/Cart.css';
-import { connect } from 'react-redux';
-function CheckOutList({ cart }) {
+import {useSelector} from 'react-redux'
 
+function CheckOutList() {
+
+  const cart = useSelector((state) => state.app.cart)
   const subTotal = cart.reduce((acc, curr) => {
     return acc + curr.price * curr.quantity
   },0)
@@ -24,8 +26,5 @@ function CheckOutList({ cart }) {
   );
 }
 
-function mapStateToProps(state, ownProps) {
-  return { cart: state.cartReducer.cartItems };
-}
 
-export default connect(mapStateToProps)(CheckOutList);
+export default CheckOutList;

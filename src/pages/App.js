@@ -5,15 +5,19 @@ import Cart from '../components/Cart/Cart';
 import DashBoard from './DashBoard/DashBoard';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import { useState } from 'react'
-import { BrowserRouter , Route, Routes, Link} from 'react-router-dom';
+import { BrowserRouter , Route, Routes } from 'react-router-dom';
 import './App.css';
+import {useSelector} from 'react-redux'
 
 function App() {
 
+  const cart = useSelector((state) => state.app.cart)
   const [dropDown3, viewDropDown3] = useState(false);
 
   const toggleDropDown3 = (e) => {
-    viewDropDown3(!dropDown3)
+    cart.length
+    ?viewDropDown3(!dropDown3)
+    :viewDropDown3(false)
   }
 
   return (

@@ -4,7 +4,7 @@ import './DashBoard.css'
 function DashBoard({order}) {
   
 
-  const cart = useSelector((state) => state.cartReducer.cartItems)
+  const orders = useSelector((state) => state.app.orders)
   
   const [pendingView, setPendingView] = useState(false)
   const [completedView, setCompletedView] = useState(true)

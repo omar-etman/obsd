@@ -1,24 +1,26 @@
 import React from 'react';
 import './CartItemCard.css';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import { connect } from 'react-redux';
 import {
   addToCart,
   reduceFromCart,
   removeFromCart,
-} from '../../redux/cart/cartActions';
+} from '../../redux/reducers/app';
+import {useDispatch} from 'react-redux'
 
-function CartItemCard({ item, addToCart, reduceFromCart, removeFromCart }) {
+function CartItemCard ({item}) {
+
+  const dispatch = useDispatch()
   const add = (e) => {
-    addToCart(item);
+    dispatch(addToCart(item));
   };
 
   const subtract = (e) => {
-    reduceFromCart(item);
+    dispatch(reduceFromCart(item));
   };
 
   const remove = (e) => {
-    removeFromCart(item);
+    dispatch(removeFromCart(item));
   };
   return (
     <div className="card-container">
@@ -46,12 +48,4 @@ function CartItemCard({ item, addToCart, reduceFromCart, removeFromCart }) {
   );
 }
 
-function mapStateToProps(state) {
-  return { cart: state.cartReducer.cartItems };
-}
-
-export default connect(mapStateToProps, {
-  addToCart,
-  reduceFromCart,
-  removeFromCart,
-})(CartItemCard);
+export default CartItemCard;

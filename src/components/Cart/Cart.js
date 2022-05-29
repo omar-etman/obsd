@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 function Cart({toggleDropDown3}) {
   
-  const cart = useSelector((state) => state.cartReducer.cartItems)
+  const cart = useSelector((state) => state.app.cart)
 
   const subTotal = cart.reduce((acc, curr) => {
     return acc + curr.price * curr.quantity
@@ -25,14 +25,11 @@ function Cart({toggleDropDown3}) {
       </ul>
       <p className="cart-subTotal">{`Subtotal = ${subTotal} LE`}</p>
       <Link to="/form">
-          <button className="cart-checkout" onClick={toggleDropDown3}>CHECKOUT</button>
+          <button className="cart-checkout" onClick={()=>toggleDropDown3()}>CHECKOUT</button>
       </Link>
     </div>
   );
 }
 
-// function mapStateToProps(state, ownProps) {
-//   return { cart: state.cartReducer.cartItems };
-// }
 
 export default Cart;
