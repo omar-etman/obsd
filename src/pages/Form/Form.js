@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import CheckOutList from '../../components/CheckOutList/CheckOutList';
 import { useFormik } from 'formik';
 import './Form.css'
@@ -14,7 +13,7 @@ function Form() {
   const formik = useFormik({
 
       initialValues: {
-          orderBy:'',
+          name:'',
           mobile:'',
           address:'',
           city:'',
@@ -33,12 +32,12 @@ function Form() {
             <CheckOutList/>
         </div>
         <form onSubmit={formik.handleSubmit}>
-            <label htmlFor="orderBy">
+            <label htmlFor="name">
                 Name
                 <input
-                    id="orderBy"
+                    id="name"
                     onInput={formik.handleChange}
-                    value={formik.values.orderBy}
+                    value={formik.values.name}
                     placeholder="i.e John Smith"
                 />
             </label>
