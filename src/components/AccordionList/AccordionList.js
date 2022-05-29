@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ItemCard from '../ItemCard/ItemCard';
 import './AccordionList.css'
-function AccordionList({items}) {
+function AccordionList({items, dropDown}) {
 
   const popular = items.POPULAR
   const pizza = items.PIZZA
@@ -15,7 +15,7 @@ function AccordionList({items}) {
   const drinks = items.DRINKS
   
   return (
-    <Fragment>
+    <div className={ dropDown ? 'accordion-hide' : 'accordion-show'}>
        <Accordion>
                 <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
@@ -126,7 +126,7 @@ function AccordionList({items}) {
                 </Typography>
                 </AccordionDetails>
             </Accordion> 
-    </Fragment>
+    </div>
   )
 }
 

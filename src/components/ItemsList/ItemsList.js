@@ -4,9 +4,7 @@ import AccordionList from '../AccordionList/AccordionList';
 import './ItemsList.css';
 import { items } from '../../dummyData/dummy';
 
-function ItemsList() {
-  //function to filter based on category (object for filters as state)
-  //for mobile view, a function to assign based on category to the accordions
+function ItemsList({dropDown}) {
 
   const [selectedItem, setSelectedItem] = useState('POPULAR');
 
@@ -15,6 +13,7 @@ function ItemsList() {
       <div className="itemsList-accordions">
         <AccordionList 
           items={items}
+          dropDown={dropDown}
         />
       </div>
       <ul

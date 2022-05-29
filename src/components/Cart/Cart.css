@@ -10,7 +10,9 @@
     overflow-y: scroll;
     justify-self: center;
     padding: 0;
-    max-height: 140%;
+    max-height: 69vh;
+    min-height:65vh;
+    margin-top: 5rem
 }
 
 
@@ -39,6 +41,8 @@
 
     .cart-list{
         height: 300px;
+        min-height: 0;
+        margin-top:0;
     }
 
     .cart-subTotal {

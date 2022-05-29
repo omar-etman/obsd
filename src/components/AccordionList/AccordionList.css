@@ -4,3 +4,12 @@
     grid-gap: 1rem;
     padding-left: 0;
 }
+
+.accordion-hide {
+    display:none;
+}
+
+.accordion-show {
+    display: block;
+    width: 100%;
+}
