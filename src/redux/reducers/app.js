@@ -24,6 +24,7 @@ export const appSlice = createSlice({
         
             console.log({ item, payload, state })
         },
+
         reduceFromCart(state, { payload }) {
             
             const item = state.cart.find((item) => {
@@ -39,6 +40,7 @@ export const appSlice = createSlice({
             }
             
 		},
+
         removeFromCart(state, {payload}) {
             state.cart = state.cart.filter((item) => {
                 return item.id !== payload.id

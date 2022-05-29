@@ -16,7 +16,6 @@ function ItemCard({ item }) {
 
 
   const subtract = () => {
-    console.log(item)
     dispatch(reduceFromCart(item));
   };
 
