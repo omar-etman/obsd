@@ -10,9 +10,21 @@ import {createOrder} from '../../API'
 function Form() {
   
   const cart = useSelector((state) => state.app.cart )
-  const order = useSelector((state) => state.app.orders )
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const totalPrice = cart.reduce((acc, curr) => {
+    return acc + curr.price * curr.quantity
+  }, 0)
+
+  const items = cart.map((el) => {
+        return (
+            {
+                id: el.id,
+                quantity: el.quantity
+            }
+         )
+    })
+
   const formik = useFormik({
 
       initialValues: {
@@ -20,13 +32,17 @@ function Form() {
           mobile:'',
           address:'',
           city:'',
-          items:cart
       },onSubmit: values => {
-          createOrder(values)
+          const payload = {
+            ...values, 
+            items, 
+            totalPrice
+          }
+          createOrder(payload)
           dispatch(addOrder(values))
+          console.log(values)
+          console.log(payload)
           navigate('/')
-          console.log("values:", values)
-          console.log(order)
       }
   })
   

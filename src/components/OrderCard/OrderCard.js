@@ -1,36 +1,30 @@
-import { useState } from 'react'
-import Box from '@mui/material/Box'
+import { useState, Fragment } from 'react'
 import Checkbox from '@mui/material/Checkbox'
-import FormControlLabel from '@mui/material/FormControlLabel'
 import {useSelector} from 'react-redux'
 import './OrderCard.css'
-function OrderCard() {
+function OrderCard({orders}) {
   const [checked, setChecked] = useState([true, false])
 
   const handleChange = (e) => {
     setChecked(e.target.checked)
   }
 
-  const orders = useSelector((state) => state.app.orders)
-
   return (
-    <div className="orderCard-container">
-      <div className="container-timeStamp">timeStamp</div>
+    <Fragment>
+      <div className="container-timeStamp">{orders.created_at}</div>
       <ul>
-        <li>
-          <Checkbox />
-        </li>
-        <li>
-          <Checkbox />
-        </li>
-        <li>
-          <Checkbox />
-        </li>
-        <li>
-          <Checkbox />
-        </li>
+        {
+            orders.orderline.map((i) => (
+                <li>
+                    <Checkbox/>
+                    <span>{i.product.name}</span>
+                    <span>{i.product.price}</span>
+                    <span>{i.quantity}</span>   
+                </li>
+            ))
+        }
       </ul>
-    </div>
+    </Fragment>
   )
 }
 

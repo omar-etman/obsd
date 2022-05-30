@@ -9,6 +9,8 @@
     display:none;
 }
 
+/* place a breakpoint for .accordion-hide to make sure it doesn't disappear in the md screen view */
+
 .accordion-show {
     display: block;
     width: 100%;

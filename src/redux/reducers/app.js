@@ -44,13 +44,30 @@ export const appSlice = createSlice({
         return item.id !== payload.id
       })
     },
-    addOrder(state, { payload }) {
-      state.orders.push(payload)
+    setOrders(state, {payload}) {
+        state.orders = payload
     },
+    addOrder(state, { payload }) {
+        const order = state.orders.find((item) => {
+            return item.id === payload.id
+        })
+        if(!order) {
+            state.orders.push(payload)
+        }else{
+            return order
+        }
+    },
+    updateOrder(state, {payload}) {
+        const order = state.orders.find((item) => {
+            return item.id === payload.id
+        })
+
+
+    }
   },
 })
 
-export const { addToCart, reduceFromCart, removeFromCart, addOrder } =
+export const { addToCart, reduceFromCart, removeFromCart, addOrder, setOrders } =
   appSlice.actions
 
 export default appSlice.reducer
