@@ -4,14 +4,12 @@ import { useFormik } from 'formik';
 import './Form.css'
 import { addOrder } from '../../redux/reducers/app'
 import {useSelector} from 'react-redux'
-import {useDispatch} from 'react-redux'
 import {createOrder} from '../../API'
 
 function Form() {
   
   const cart = useSelector((state) => state.app.cart )
   const navigate = useNavigate()
-  const dispatch = useDispatch()
   const totalPrice = cart.reduce((acc, curr) => {
     return acc + curr.price * curr.quantity
   }, 0)
@@ -39,10 +37,9 @@ function Form() {
             totalPrice
           }
           createOrder(payload)
-          dispatch(addOrder(values))
           console.log(values)
           console.log(payload)
-          navigate('/')
+          navigate('/complete')
       }
   })
   

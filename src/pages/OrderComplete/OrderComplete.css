@@ -1,0 +1,30 @@
+.orderComplete-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 89vh;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.orderComplete-image {
+    width: 26rem;
+    /* margin-top: 0rem; */
+}
+
+.orderComplete-back-button{
+    transition: all 0.25s ease-in-out;
+    padding: 1.2rem;
+    font-weight: 600;
+    color: white;
+    background-color: var(--orange);
+    border: none;
+    border-radius: 1rem;
+}
+
+.orderComplete-back-button:hover {
+    padding: 1.4rem;
+    background-color: var(--red);
+    
+}

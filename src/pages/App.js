@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import { useSelector } from 'react-redux'
+import OrderComplete from './OrderComplete/OrderComplete'
 
 function App() {
   const cart = useSelector((state) => state.app.cart)
@@ -36,6 +37,7 @@ function App() {
           <Route path="/" element={<Home dropDown={dropDown3} />} />
           <Route path="/form" element={<Form />} />
           <Route path="/dashboard" element={<DashBoard />} />
+          <Route path="/complete" element={<OrderComplete />} />
         </Routes>
         <footer className="App-footer">
           <div className="footer-brand">

@@ -9,6 +9,13 @@
     display:none;
 }
 
+@media (min-width: 700px){
+   .accordion-hide {
+       display: block;
+       width: 100%;
+   } 
+}
+
 /* place a breakpoint for .accordion-hide to make sure it doesn't disappear in the md screen view */
 
 .accordion-show {

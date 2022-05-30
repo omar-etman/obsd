@@ -1,29 +1,38 @@
 import { useState, useEffect } from 'react'
-import { getOrders} from '../../API'
+import { getOrders, updateOrderStatus } from '../../API'
 import OrderCard from '../../components/OrderCard/OrderCard'
 import './DashBoard.css'
 function DashBoard({ order }) {
-  
   const [pendingOrders, setPendingOrders] = useState([])
   const [completedOrders, setCompletedOrders] = useState([])
   const [view, setView] = useState('')
 
   const setPendingOrdersData = async () => {
-      try{
-          const allOrdersResponse = await getOrders()
-          const allOrdersData = await allOrdersResponse.data
-          setPendingOrders(allOrdersData.filter((o) => o.completed === false))
-          setCompletedOrders(allOrdersData.filter((o) => o.completed ===  true))
-      }catch(error){
-        console.log(error)
-      }
+    try {
+      const allOrdersResponse = await getOrders()
+      const allOrdersData = await allOrdersResponse.data
+      setPendingOrders(allOrdersData.filter((o) => o.completed === false))
+      setCompletedOrders(allOrdersData.filter((o) => o.completed === true))
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   useEffect(() => {
-      setPendingOrdersData()
-      setView("Pending")
+    setPendingOrdersData()
+    setView('Pending')
   }, [])
 
+  const orderComplete = async (id) => {
+    const updateOrderResponse = await updateOrderStatus(id)
+    const updatedOrder = await updateOrderResponse.data
+    setCompletedOrders(...completedOrders, updatedOrder)
+    setPendingOrders(
+      pendingOrders.filter((o) => {
+        return o.id !== updatedOrder.id
+      })
+    )
+  }
 
   return (
     <div className="dashBoard-container">
@@ -39,28 +48,21 @@ function DashBoard({ order }) {
         </ul>
       </aside>
       <main>
-          <div className="dashBoard-orders-container">
-            <ul className="container-orderCards-list">
-                {
-                    view === 'Pending' 
-                    ?pendingOrders.map((o) => (
-                        <li className="list-orderCard" key={o.id}>
-                            <OrderCard
-                                orders={o}
-                            />
-                        </li>
-                    )) 
-                    :completedOrders.map((o) => (
-                        <li key={o.id}>
-                            <OrderCard
-                                orders={o}
-                            />
-                        </li>
-                    ))
-                }
-              
-            </ul>
-          </div>
+        <div className="dashBoard-orders-container">
+          <ul className="container-orderCards-list">
+            {view === 'Pending'
+              ? pendingOrders.map((o) => (
+                  <li className="list-orderCard" key={o.id}>
+                    <OrderCard orders={o} view={view} orderComplete={orderComplete}/>
+                  </li>
+                ))
+              : completedOrders.map((o) => (
+                  <li key={o.id}>
+                    <OrderCard orders={o} view={view} orderComplete={orderComplete}/>
+                  </li>
+                ))}
+          </ul>
+        </div>
       </main>
     </div>
   )
