@@ -1,39 +1,31 @@
-import './ItemCard.css';
-import { addToCart, reduceFromCart } from '../../redux/reducers/app';
-import {useSelector, useDispatch} from 'react-redux'
-import {useEffect} from 'react'
-
+import './ItemCard.css'
+import { addToCart, reduceFromCart } from '../../redux/reducers/app'
+import { useSelector, useDispatch } from 'react-redux'
 
 function ItemCard({ item }) {
-
   const dispatch = useDispatch()
 
   const cart = useSelector((state) => state.app.cart)
-  
-  const add = () => {
-    dispatch(addToCart(item));
-  };
 
+  const add = () => {
+    dispatch(addToCart(item))
+  }
 
   const subtract = () => {
-    dispatch(reduceFromCart(item));
-  };
+    dispatch(reduceFromCart(item))
+  }
 
   const quan = (item) => {
     if (cart.length > 0) {
       const x = cart.filter((el) => {
-        return el?.name === item?.name;
-      });
+        return el?.name === item?.name
+      })
       if (x.length > 0)
-        return cart.filter((el) => el?.name === item?.name)[0]['quantity'];
+        return cart.filter((el) => el?.name === item?.name)[0]['quantity']
     }
 
-    return 0;
-  };
-
-  // useEffect(() => {
-  //   console.log({cart})
-  // }, [cart])
+    return 0
+  }
 
   return (
     <div className="card-container" style={{ width: '22em', height: '17em' }}>
@@ -60,8 +52,7 @@ function ItemCard({ item }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-
-export default ItemCard;
+export default ItemCard

@@ -1,27 +1,26 @@
-import React from 'react';
-import './CartItemCard.css';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import React from 'react'
+import './CartItemCard.css'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   addToCart,
   reduceFromCart,
   removeFromCart,
-} from '../../redux/reducers/app';
-import {useDispatch} from 'react-redux'
+} from '../../redux/reducers/app'
+import { useDispatch } from 'react-redux'
 
-function CartItemCard ({item}) {
-
+function CartItemCard({ item }) {
   const dispatch = useDispatch()
   const add = (e) => {
-    dispatch(addToCart(item));
-  };
+    dispatch(addToCart(item))
+  }
 
   const subtract = (e) => {
-    dispatch(reduceFromCart(item));
-  };
+    dispatch(reduceFromCart(item))
+  }
 
   const remove = (e) => {
-    dispatch(removeFromCart(item));
-  };
+    dispatch(removeFromCart(item))
+  }
   return (
     <div className="card-container">
       <img src={item?.image} alt="itemImg" className="card-img" />
@@ -45,7 +44,7 @@ function CartItemCard ({item}) {
         <DeleteForeverIcon />
       </span>
     </div>
-  );
+  )
 }
 
-export default CartItemCard;
+export default CartItemCard

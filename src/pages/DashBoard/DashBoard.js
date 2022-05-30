@@ -53,12 +53,20 @@ function DashBoard({ order }) {
             {view === 'Pending'
               ? pendingOrders.map((o) => (
                   <li className="list-orderCard" key={o.id}>
-                    <OrderCard orders={o} view={view} orderComplete={orderComplete}/>
+                    <OrderCard
+                      orders={o}
+                      view={view}
+                      orderComplete={orderComplete}
+                    />
                   </li>
                 ))
               : completedOrders.map((o) => (
                   <li key={o.id}>
-                    <OrderCard orders={o} view={view} orderComplete={orderComplete}/>
+                    <OrderCard
+                      orders={o}
+                      view={view}
+                      orderComplete={orderComplete}
+                    />
                   </li>
                 ))}
           </ul>
