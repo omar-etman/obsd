@@ -3,23 +3,19 @@ import Checkbox from '@mui/material/Checkbox'
 import {useSelector} from 'react-redux'
 import './OrderCard.css'
 function OrderCard({orders}) {
-  const [checked, setChecked] = useState([true, false])
-
-  const handleChange = (e) => {
-    setChecked(e.target.checked)
-  }
 
   return (
     <Fragment>
-      <div className="container-timeStamp">{orders.created_at}</div>
-      <ul>
+      <div className="orderCard-timeStamp"><span className='spacer
+      '>{orders.created_at}</span></div>
+      <ul className='orderCard-checkList'>
         {
             orders.orderline.map((i) => (
-                <li>
+                <li className='orderCard-checkList-row'>
                     <Checkbox/>
                     <span>{i.product.name}</span>
-                    <span>{i.product.price}</span>
-                    <span>{i.quantity}</span>   
+                    <span className='spacer'>{i.product.price}$</span>
+                    <span>QTY:{i.quantity}</span>   
                 </li>
             ))
         }

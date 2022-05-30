@@ -1,0 +1,36 @@
+
+.orderCard-timeStamp {
+    width: 100%;
+    display: flex;
+    text-align: left;
+    color: white;
+    background-color: orange;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    font-weight: bolder;
+}
+
+
+.orderCard-checkList {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: 0;
+    padding-left: 0;
+    align-items: flex-start;
+}
+
+.orderCard-checkList-row {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-left: 0;
+    padding-left: 0;
+    align-items: center;
+}
+
+.spacer{
+    margin: 0 2rem;
+}

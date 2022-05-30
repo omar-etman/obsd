@@ -40,11 +40,11 @@ function DashBoard({ order }) {
       </aside>
       <main>
           <div className="dashBoard-orders-container">
-            <ul className="container-orderCard-list">
+            <ul className="container-orderCards-list">
                 {
                     view === 'Pending' 
                     ?pendingOrders.map((o) => (
-                        <li key={o.id}>
+                        <li className="list-orderCard" key={o.id}>
                             <OrderCard
                                 orders={o}
                             />

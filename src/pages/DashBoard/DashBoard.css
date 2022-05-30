@@ -57,21 +57,28 @@
     border-radius: 0.25rem;
 }
 
-.dashBoard-orders-container{
-    display:flex;
+.dashBoard-orders-container {
+    display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
-    border: 2px solid blue;
 }
 
-.container-orderCard-list {
-  grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows: 1fr 1fr 1fr; 
-  gap: 12px 12px;
-  width: 100%;
-  margin: 12px;
-  border: 2px solid green; 
+.container-orderCards-list {
+    width: 100%;
+    margin: 12px;
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: 9rem;
+}
+.list-orderCard {
+    border: 1px solid orange;
+    list-style: none;
+    margin: 1rem;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+    width:25rem;
 }
 
 
