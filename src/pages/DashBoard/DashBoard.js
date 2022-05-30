@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getOrders, updateOrderStatus } from '../../API'
-import OrderCard from '../../components/OrderCard/OrderCard'
+import PendingCard from '../../components/OrderCard/PendingCard'
+import CompletedCard from '../../components/OrderCard/CompletedCard'
 import './DashBoard.css'
 function DashBoard({ order }) {
   const [pendingOrders, setPendingOrders] = useState([])
@@ -21,7 +22,7 @@ function DashBoard({ order }) {
   useEffect(() => {
     setPendingOrdersData()
     setView('Pending')
-  }, [])
+  }, [pendingOrders, completedOrders])
 
   const orderComplete = async (id) => {
     const updateOrderResponse = await updateOrderStatus(id)
@@ -32,6 +33,12 @@ function DashBoard({ order }) {
         return o.id !== updatedOrder.id
       })
     )
+    return updatedOrder
+  }
+
+  const handleView = () => {
+      console.log(completedOrders)
+      setView("Pending")
   }
 
   return (
@@ -39,7 +46,7 @@ function DashBoard({ order }) {
       <aside>
         <h1>Dashboard</h1>
         <ul className="dashBoard-nav">
-          <li onClick={(e) => setView('Pending')} className="nav-item">
+          <li onClick={(e) => handleView('Pending')} className="nav-item">
             Pending <span>{pendingOrders.length}</span>
           </li>
           <li onClick={(e) => setView('Completed')} className="nav-item">
@@ -51,21 +58,18 @@ function DashBoard({ order }) {
         <div className="dashBoard-orders-container">
           <ul className="container-orderCards-list">
             {view === 'Pending'
-              ? pendingOrders.map((o) => (
+              ? pendingOrders?.map((o) => (
                   <li className="list-orderCard" key={o.id}>
-                    <OrderCard
-                      orders={o}
-                      view={view}
+                    <PendingCard
+                      order={o}
                       orderComplete={orderComplete}
                     />
                   </li>
                 ))
-              : completedOrders.map((o) => (
+              : completedOrders?.map((o) => (
                   <li key={o.id}>
-                    <OrderCard
+                    <CompletedCard
                       orders={o}
-                      view={view}
-                      orderComplete={orderComplete}
                     />
                   </li>
                 ))}

@@ -2,6 +2,9 @@
 .orderCard-timeStamp {
     width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
     text-align: left;
     color: white;
     background-color: orange;

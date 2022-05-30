@@ -16,6 +16,9 @@ function App() {
 
   const toggleDropDown3 = (e) => {
     viewDropDown3(!dropDown3)
+    if(cart.length === 0){
+      viewDropDown3(false)
+    }
   }
 
   useEffect(() => {
