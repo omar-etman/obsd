@@ -5,9 +5,14 @@ import Cart from '../Cart/Cart'
 import BikeIcon from '../../assets/fastDelivery.png'
 import './Nav.css'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 function Nav({ dropDown3, toggleDropDown3 }) {
   const cart = useSelector((state) => state.app.cart)
+  const navigate = useNavigate()
+  const menu = () => {
+      navigate("/")
+  }
   console.log(dropDown3)
   return (
     <div className="nav-container">
@@ -20,8 +25,8 @@ function Nav({ dropDown3, toggleDropDown3 }) {
         </div>
       </Link>
       <ul className="nav-buttons">
-        <li className="buttons-btn">Menu</li>
-        <li className="buttons-btn">Most Popular</li>
+        <li className="buttons-btn" onClick={(e) => menu() }>Menu</li>
+        <li className="buttons-btn">About us</li>
         <li className="buttons-bikeBtn" onClick={toggleDropDown3}>
           <Badge badgeContent={cart?.length} color="primary">
             <img src={BikeIcon} alt="bikeIcon" className="bikebtn-icon" />

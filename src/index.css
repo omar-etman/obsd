@@ -6,7 +6,7 @@
   --black: #303030;
   --blue: #21759b;
   --Grey: #707070;
-  --ltGrey: lightgray;
+  --ltGrey: rgb(244, 244, 244);
   --green: #2fcd17;
 }
 

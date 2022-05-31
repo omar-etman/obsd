@@ -39,7 +39,7 @@ function ItemCard({ item }) {
         <div className="item-details">
           <h3 className="item-name">{item?.name}</h3>
           <p className="item-ingredients">{item?.description}</p>
-          <span className="item-price">Price: {item?.price}</span>
+          <span className="item-price">Price: ${item?.price}</span>
         </div>
         <div className="card-incrementor">
           <button onClick={subtract} className="incrementor-btn minus">
