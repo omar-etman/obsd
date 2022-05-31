@@ -1,12 +1,14 @@
 import CheckOutList from '../../components/CheckOutList/CheckOutList'
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { createOrder } from '../../API'
+import { clearCart } from '../../redux/reducers/app'
 import './Form.css'
 
 function Form() {
   const cart = useSelector((state) => state.app.cart)
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const totalPrice = cart.reduce((acc, curr) => {
     return acc + curr.price * curr.quantity
@@ -33,9 +35,8 @@ function Form() {
         totalPrice,
       }
       createOrder(payload)
-      console.log(values)
-      console.log(payload)
       navigate('/complete')
+      dispatch(clearCart())
     },
   })
 

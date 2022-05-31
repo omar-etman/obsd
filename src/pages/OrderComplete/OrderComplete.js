@@ -1,15 +1,11 @@
 import React from 'react'
 import orderComplete from '../../assets/circle-checkmark-512.webp'
 import {useNavigate} from "react-router-dom"
-import {useDispatch} from 'react-redux'
 import './OrderComplete.css'
-import { clearCart } from '../../redux/reducers/app'
+
 function OrderComplete() {
     const navigate = useNavigate()
-    const dispatch = useDispatch()
-
     const back = () => {
-        dispatch(clearCart())
         navigate("/")
     }
   return (
