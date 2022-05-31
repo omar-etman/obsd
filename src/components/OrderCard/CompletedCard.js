@@ -4,12 +4,12 @@ function CompletedCard({ order }) {
 
   return (
     <Fragment>
-      <div className="orderCard-timeStamp">
+      <div className="completedCard-timeStamp">
         <span className="spacer">
-          {order.created_at}
+          {order?.created_at}
         </span>
       </div>
-      <ul className="orderCard-checkList">
+      <ul className="completedCard-checkList">
         {order?.orderline.map((i) => (
           <li className="orderCard-checkList-row" key={i.id}>
             <span>{i.product.name}</span>

@@ -1,27 +1,40 @@
 
-.orderCard-timeStamp {
+.orderCard-timeStamp, .completedCard-timeStamp {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     text-align: left;
     color: white;
-    background-color: orange;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     font-weight: bolder;
 }
+.orderCard-timeStamp{
+    background-color: var(--orange);
+    justify-content: space-between;
+}
+
+.completedCard-timeStamp{
+    background-color: green;
+}
 
 
-.orderCard-checkList {
+.orderCard-checkList, .completedCard-checkList {
     list-style: none;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     margin-left: 0;
-    padding-left: 0;
     align-items: flex-start;
+}
+
+.orderCard-checkList{
+    padding-left: 0;
+}
+
+.completedCard-checkList{
+    padding-left: 1rem;
 }
 
 .orderCard-checkList-row {
