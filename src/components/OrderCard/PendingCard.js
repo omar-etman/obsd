@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react'
 import Checkbox from '@mui/material/Checkbox'
 import './OrderCard.css'
+import moment from "moment";
 function PendingCard({ order, orderComplete }) {
 
     const [checked, setChecked] = useState(false);
@@ -14,7 +15,7 @@ function PendingCard({ order, orderComplete }) {
     <Fragment>
       <div className="orderCard-timeStamp">
         <span className="spacer">
-          {order.created_at}
+          {moment(order.created_at).format("hh: mm: ss")}
         </span>
         <Checkbox checked={checked}
         onChange={checkOrder}/>
