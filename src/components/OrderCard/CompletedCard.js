@@ -1,12 +1,13 @@
 import {Fragment} from 'react'
 import './OrderCard.css'
+import moment from "moment";
 function CompletedCard({ order }) {
 
   return (
     <Fragment>
       <div className="completedCard-timeStamp">
         <span className="spacer">
-          {order?.created_at}
+        {moment(order.created_at).format("hh: mm: ss")}
         </span>
       </div>
       <ul className="completedCard-checkList">
